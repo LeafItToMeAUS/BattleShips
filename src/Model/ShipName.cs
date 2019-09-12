@@ -1,4 +1,4 @@
-﻿public enum ShipName
+public enum ShipName
 {
     None = 0,
     Tug = 1,
