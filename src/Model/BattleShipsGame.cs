@@ -90,8 +90,8 @@ public class BattleShipsGame
         if (AttackCompleted != null) AttackCompleted.Invoke(this, newAttack);
 
         // change player if the last hit was a miss
-        //if (newAttack.Value == ResultOfAttack.Miss)
-           // _playerIndex = otherPlayer;
+        if (newAttack.Value == ResultOfAttack.Miss)
+            _playerIndex = otherPlayer;
         // its a feature 
         return newAttack;
     }
