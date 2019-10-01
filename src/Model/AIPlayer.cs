@@ -56,7 +56,7 @@ public abstract class AIPlayer : Player
         /// <returns>true if location 1 and location 2 are at the same spot</returns>
         public static bool operator ==(Location @this, Location other)
         {
-            return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
+            return !(@this is null) && !(other is null) && @this.Row == other.Row && @this.Column == other.Column;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ public abstract class AIPlayer : Player
         /// <returns>true if location 1 and location 2 are not at the same spot</returns>
         public static bool operator !=(Location @this, Location other)
         {
-            return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
+            return @this is null || other is null || @this.Row != other.Row || @this.Column != other.Column;
         }
     }
 
@@ -104,7 +104,7 @@ public abstract class AIPlayer : Player
 
         do
         {
-            Delay();
+            //Delay();
             GenerateCoords(ref row, ref column);
             result = _game.Shoot(row, column);
             ProcessShot(row, column, result);
