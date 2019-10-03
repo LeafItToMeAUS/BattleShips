@@ -92,6 +92,9 @@ public class BattleShipsGame
         // change player if the last hit was a miss
         if (newAttack.Value == ResultOfAttack.Miss)
             _playerIndex = otherPlayer;
+
+        if (newAttack.Value == ResultOfAttack.Hit)
+            _playerIndex = otherPlayer;
         // its a feature 
         return newAttack;
     }
