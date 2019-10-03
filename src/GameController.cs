@@ -266,6 +266,13 @@ public static class GameController
     {
         switch (result.Value)
         {
+            case ResultOfAttack.Hit:
+                {
+                    if (_theGame.Player == ComputerPlayer)
+                        AIAttack();
+                    break;
+                }
+
             case ResultOfAttack.Miss:
             {
                 if (_theGame.Player == ComputerPlayer)
